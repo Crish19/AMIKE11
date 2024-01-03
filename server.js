@@ -573,7 +573,7 @@ app.get("/api/bookings/cancel/:bookingId", async (req, res) => {
     await transporter.sendMail(adminMailOptions);
 
     // Redirect to a confirmation page
-    res.redirect("http://localhost:3000/booking-cancelled-confirmation");
+    res.redirect("https://amiketours.com/booking-cancelled-confirmation");
   } catch (error) {
     console.error("Cancellation error:", error);
     res.status(500).send("Internal Server Error");
@@ -699,7 +699,7 @@ app.post("/api/bookings", async (req, res) => {
 
             <p>If you need to cancel your booking, please click the button below or contact us directly.</p>
             <!-- Cancel Booking Button -->
-            <a href="http://localhost:3001/api/bookings/cancel/${
+            <a href="https://amiketours.com/api/bookings/cancel/${
               bookingDetails._id
             }" style="color: white; background-color: red; padding: 10px 20px; text-decoration: none; display: inline-block; margin-top: 20px;">Cancel Booking</a>
           
