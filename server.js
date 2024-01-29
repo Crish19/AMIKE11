@@ -17,7 +17,13 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 app.use(express.json());
-app.use(cors());
+const corsOptions = {
+  origin: '*',  // Cambia esto a tu dominio de producción
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
+
 app.use(
   "/public/uploads",
   express.static(path.join(__dirname, "public/uploads"))
