@@ -24,10 +24,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.use(
-  "/public/uploads",
-  express.static(path.join(__dirname, "public/uploads"))
-);
+app.use(express.static(path.join(__dirname, "public")));
 
 require("dotenv").config();
 
