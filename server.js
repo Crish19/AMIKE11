@@ -17,14 +17,11 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 app.use(express.json());
-const corsOptions = {
-  origin: '*',  // Cambia esto a tu dominio de producción
-  optionsSuccessStatus: 200,
-};
-
-app.use(cors(corsOptions));
-
-app.use(express.static(path.join(__dirname, "public")));
+app.use(cors());
+app.use(
+  "/public/uploads",
+  express.static(path.join(__dirname, "public/uploads"))
+);
 
 require("dotenv").config();
 
